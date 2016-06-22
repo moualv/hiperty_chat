@@ -22,7 +22,7 @@ class HypObserver extends EventEmitter {
 
     event.ack();
 
-    let this = _this
+    let this = _this;
     this.syncher.subscribe(this.objectDescURL, event.url).then( function(objObserver) {
       //cambiar el trigger
       _this.trigger('random-number', objObserver.data);
