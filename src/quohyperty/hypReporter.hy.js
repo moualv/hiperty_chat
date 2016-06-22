@@ -10,9 +10,11 @@ class HypReporter {
 	    if (!bus) throw new Error('The MiniBus is a needed parameter');
 	    if (!configuration) throw new Error('The configuration is a needed parameter');
 
+			let _this = this;
+
 	    let domain = divideURL(hypertyURL).domain;
     	_this._domain = domain;
-	    this._objectDescURL = 'hyperty-catalogue://catalogue.' + domain + '/.well-known/dataschema/hypDataSchema';
+	    this._objectDescURL = 'hyperty-catalogue://catalogue.' + domain + '/.well-known/dataschema/HelloWorldDataSchema';
 
 	    let syncher = new Syncher(hypertyURL, bus, configuration);
 
@@ -21,7 +23,7 @@ class HypReporter {
 	}
 
 	random(hypertyURL) {
-
+		let _this = this;
 		let syncher = _this._syncher;
 
 	    return new Promise(function(resolve, reject) {
@@ -31,7 +33,7 @@ class HypReporter {
 	        console.info('1. Return Created Random Number Data Object Reporter', objReporter);
 
 	        this.objReporter = objReporter;
-	        this.objReporter.data.random = Math.random();
+	        this.objReporter.data.hello = Math.random();
 
 	        objReporter.onSubscription(function(event) {
 	          console.info('-------- Random Number Reporter received subscription request --------- \n');
@@ -50,7 +52,7 @@ class HypReporter {
 	      });
 
 	    });
-  
+
 
 	}
 
@@ -59,7 +61,7 @@ class HypReporter {
 
     	console.log('bye:', this.objReporter );
 
-	    this.objReporter.data.random = Math.random();
+	    this.objReporter.data.hello = Math.random();
   	}
 
 }

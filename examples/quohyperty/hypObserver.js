@@ -16,7 +16,7 @@ function hypertyLoaded(result) {
 
   hypertyObserver.addEventListener('random-number', function(event) {
     let msgPanel = $('.msg-panel');
-    let msg = `<p>  ` + event.random + `</p>`;
+    let msg = `<p>  ` + event.hello + `</p>`;
     msgPanel.append(msg);
   });
 }

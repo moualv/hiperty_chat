@@ -16,9 +16,9 @@ function hypertyLoaded(result) {
 
 	let random = $('.random-panel');
 
-	let sayRandTo = '<form class="rand"> Hyperty URL: <input class="to-hyperty-input" type="text" name="toHyperty"><br><input type="submit" value="Say Hello"></form>'
+	let sayRandTo = '<form class="rand"> Hyperty URL: <input class="to-hyperty-input" type="text" name="toHyperty"><br><input type="submit" value="GenRand"></form>'
 
-	random.append(sayHelloTo);
+	random.append(sayRandTo);
 
 	$('.rand').on('submit', sayRan);
 }
@@ -32,7 +32,7 @@ function sayRan(event) {
 	let toHyperty = toHypertyForm.find('.to-hyperty-input').val();
 
 
-	hyperty.hello(toHyperty).then(function(randomObject) {
+	hyperty.random(toHyperty).then(function(randomObject) {
 
     $('.random-panel').hide();
 
@@ -78,4 +78,3 @@ Handlebars.getTemplate = function(name) {
   });
 
 }
-

@@ -8,7 +8,8 @@ class HypObserver extends EventEmitter {
   constructor(hypertyURL, bus, configuration) {
     super();
     let _this = this;
-    _this._objectDescURL = 'hyperty-catalogue://catalogue.' + domain + '/.well-known/dataschema/hypDataSchema';
+    let domain = divideURL(hypertyURL).domain;
+    _this._objectDescURL = 'hyperty-catalogue://catalogue.' + domain + '/.well-known/dataschema/HelloWorldDataSchema';
 
     let syncher = new Syncher(hypertyURL, bus, configuration);
     syncher.onNotification(function(event) {
