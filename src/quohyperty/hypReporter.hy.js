@@ -55,7 +55,7 @@ class HypReporter {
 	}
 
 
-	random-again() {
+	random_again() {
 
     	console.log('bye:', this.objReporter );
 
