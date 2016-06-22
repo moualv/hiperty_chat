@@ -1,0 +1,55 @@
+var hyperty
+
+function hypertyLoaded(result) {
+	hyperty = result.instance;
+
+	console.log(hyperty);
+
+	$('.selection-panel').hide();
+
+	let hypertyPanel = $('.hyperty-panel');
+
+	let hi = '<p>Hyperty Reporter URL: ' + result.runtimeHypertyURL + '</p>';
+
+	hypertyPanel.append(hi);
+
+
+	let random = $('.random-panel');
+
+	let sayRandTo = '<form class="rand"> Hyperty URL: <input class="to-hyperty-input" type="text" name="toHyperty"><br><input type="submit" value="Say Hello"></form>'
+
+	random.append(sayHelloTo);
+
+	$('.rand').on('submit', sayRan);
+}
+
+function sayRan(event) {
+
+	event.preventDefault();
+
+	let toHypertyForm = $(event.currentTarget);
+
+	let toHyperty = toHypertyForm.find('.to-hyperty-input').val();
+
+
+	hyperty.hello(toHyperty).then(function(randomObject) {
+
+    $('.random-panel').hide();
+
+    var randomUrl = '<p>Random URL: '+ randomObject.url + '</p>';
+
+    let bye = $('.rand-again');
+
+    let sayRand = '<button class="say-rand-again">Say rand</button>';
+
+    bye.append(randomUrl);
+
+	bye.append(sayRand);
+
+  	}).catch(function(reason) {
+    	console.error(reason);
+  	});
+
+    $('.rand-again').on('click', sayRand);
+}
+
