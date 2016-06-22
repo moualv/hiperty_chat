@@ -4,7 +4,7 @@
 	"type": "object",
 	"required": ["random"],
 	"additionalProperties": false,
-  "properties": {
+  	"properties": {
 		"scheme": {
 			"constant": "random"
 		},
