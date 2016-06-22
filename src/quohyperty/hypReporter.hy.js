@@ -1,6 +1,6 @@
 import {Syncher} from 'service-framework/dist/Syncher';
 import {divideURL} from '../utils/utils';
-import hello from './hello';
+import random from './random';
 
 class HypReporter {
 
@@ -55,7 +55,7 @@ class HypReporter {
 	}
 
 
-	random-again() {
+	random_again() {
 
     	console.log('bye:', this.objReporter );
 
