@@ -1,6 +1,6 @@
 let random = {
   name: "random",
-  hello: ""
+  random: ""
 };
 
 export default random;

@@ -123,6 +123,17 @@ function hypertyDeployed(hyperty) {
       template = 'hello-world/helloWorld';
       script =  'hello-world/helloReporter.js';
       break;
+
+    case 'hypObserver':
+      template = 'quohyperty/hyp';
+      script =  'quohyperty/hypObserver.js';
+      break;
+
+    case 'hypReporter':
+      template = 'quohyperty/hyp';
+      script =  'quohyperty/hypReporter.js';
+      break;
+
   }
 
   if (!template) {
