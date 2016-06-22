@@ -1,5 +1,7 @@
 import {Syncher} from 'service-framework/dist/Syncher';
+import {divideURL} from '../utils/utils';
 import EventEmitter from '../utils/EventEmitter';
+
 
 class HypObserver extends EventEmitter {
 
@@ -23,11 +25,11 @@ class HypObserver extends EventEmitter {
     let this = _this
     this.syncher.subscribe(this.objectDescURL, event.url).then( function(objObserver) {
       //cambiar el trigger
-      _this.trigger('', objObserver.data);
+      _this.trigger('random-number', objObserver.data);
 
       objObserver.onChange('*', function(event) {
         //cambiar el trigger
-        _this.trigger('', objObserver.data);
+        _this.trigger('random-number', objObserver.data);
       });
     });
   }
