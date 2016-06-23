@@ -27,8 +27,17 @@ class HypObserver extends EventEmitter {
     event.ack();
 
     _this._syncher.subscribe(_this._objectDescURL, event.url).then( function(objObserver) {
-      //cambiar el trigger
+      console.info('me subscribí');
+      console.info(objObserver.data.hello);
       _this.trigger('random-number', objObserver.data);
+      _this._syncher.create(_this._objectDescURL, [objObserver.data.hello],_this._onNotification).then(function(objReporter){
+        console.info('objeto creado');
+        objReporter.data.hello = 'SALUDOS BRO';
+        objReporter.onSubscription(function(event) {
+          console.info('-------- Random Number Reporter received subscription request --------- \n');
+          event.accept();
+        });
+      });
 
       objObserver.onChange('*', function(event) {
         //cambiar el trigger

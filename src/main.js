@@ -137,10 +137,12 @@ function hypertyDeployed(hyperty) {
     case 'weatherReporter':
       template = 'weatherhyp/hyp';
       script = 'weatherhyp/hypReporter.js';
+      break;
 
     case 'weatherObserver':
       template = 'weatherhyp/hyp';
       script = 'weatherhyp/hypObserver.js';
+      break;
   }
 
   if (!template) {
