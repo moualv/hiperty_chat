@@ -26,13 +26,14 @@ class HypObserver extends EventEmitter {
 
     event.ack();
 
-    _this.syncher.subscribe(_this.objectDescURL, event.url).then( function(objObserver) {
+    _this._syncher.subscribe(_this._objectDescURL, event.url).then( function(objObserver) {
       //cambiar el trigger
       _this.trigger('random-number', objObserver.data);
 
       objObserver.onChange('*', function(event) {
         //cambiar el trigger
         _this.trigger('random-number', objObserver.data);
+        objObserver.data.hello = "hola ke ase";
       });
     });
   }

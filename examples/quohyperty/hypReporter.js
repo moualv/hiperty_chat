@@ -50,7 +50,7 @@ function sayRan(event) {
     	console.error(reason);
   	});
 
-    $('.rand-again').on('click', sayRand);
+    $('.rand-again').on('click', sayRan);
 }
 
 Handlebars.getTemplate = function(name) {

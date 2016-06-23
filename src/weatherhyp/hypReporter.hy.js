@@ -32,8 +32,8 @@ class HypReporter {
 	      syncher.create(_this._objectDescURL, [hypertyURL], random).then(function(objReporter) {
 	        console.info('1. Return Created Random Number Data Object Reporter', objReporter);
 
-	        this.objReporter = objReporter;
-	        this.objReporter.data.hello = Math.random();
+	        _this.objReporter = objReporter;
+	        _this.objReporter.data.hello = Math.random().toString();
 
 	        objReporter.onSubscription(function(event) {
 	          console.info('-------- Random Number Reporter received subscription request --------- \n');
@@ -44,7 +44,6 @@ class HypReporter {
 	        });
 
 	        resolve(objReporter);
-
 	      })
 	      .catch(function(reason) {
 	        console.error(reason);

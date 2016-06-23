@@ -7,8 +7,8 @@ function hypertyLoaded(result) {
 
   hypertyPanel.append(hi);
 
-  hypertyObserver.addEventListener('invitation', function(identify) {
-    JSON.stringify(identify);
+  hypertyObserver.addEventListener('invitation', function(identity) {
+    JSON.stringify(identity);
     let invitationPanel = $('.invitation-panel');
     let invitation = `<p> Invitation received from:\n ` + identity.infoToken.name + '</p>';
     invitationPanel.append(invitation);
