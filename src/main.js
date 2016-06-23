@@ -134,6 +134,13 @@ function hypertyDeployed(hyperty) {
       script =  'quohyperty/hypReporter.js';
       break;
 
+    case 'weatherReporter':
+      template = 'weatherhyp/hyp';
+      script = 'weatherhyp/hypReporter.js';
+
+    case 'weatherObserver':
+      template = 'weatherhyp/hyp';
+      script = 'weatherhyp/hypObserver.js';
   }
 
   if (!template) {
